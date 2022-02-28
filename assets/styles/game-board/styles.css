@@ -1,0 +1,754 @@
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--background);
+}
+
+:root {
+    --background:           #1A2A33;
+    --background-content:   #1F3641;
+    --text:                 #A8BFC9;
+    --yellow:               #F2B137;
+    --blue:                 #31C3BD;
+}
+
+#page-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 45rem;
+}
+
+#main-header {
+    display: -ms-grid;
+    display: grid;
+
+    grid-gap: 1.25rem;
+    -ms-grid-columns: 8.75rem 1.25rem 8.75rem 1.25rem 8.75rem;
+    grid-template-columns: repeat(3, 8.75rem);
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 28.75rem;
+}
+
+#icons-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#icons-container img {
+    width: 2rem;
+    height: 2rem;
+}
+
+#icons-container img:first-child {
+    margin-right: 0.5rem;
+}
+
+#turn-container {
+    background: var(--background-content);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.25rem 0 #10212A;
+    box-shadow: inset 0 -0.25rem 0 #10212A;
+
+    padding-bottom: 0.25rem;
+
+    width: 100%;
+    height: 3.25rem;
+}
+
+#turn-container img {
+    margin-right: 0.75rem;
+
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+#turn-container p {
+    color: var(--text);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 0;
+}
+
+#restart-button {
+    background: var(--text);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    justify-self: flex-end;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.25rem 0 #6B8997;
+    box-shadow: inset 0 -0.25rem 0 #6B8997;
+
+    padding-bottom: 0.25rem;
+
+    cursor: pointer;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+
+    width: 3.25rem;
+    height: 3.25rem;
+}
+
+#restart-button:hover {
+    -webkit-filter: brightness(0.8);
+    filter: brightness(0.8);
+}
+
+#restart-button img {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+#board {
+    display: -ms-grid;
+    display: grid;
+
+    grid-gap: 1.25rem;
+    -ms-grid-columns: 8.75rem 1.25rem 8.75rem 1.25rem 8.75rem;
+    grid-template-columns: repeat(3, 8.75rem);
+
+    margin: 1.25rem 0 1.25rem 0;
+}
+
+.board-block {
+    background: var(--background-content);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.9375rem;
+
+    -webkit-box-shadow: inset 0 -0.5rem 0 #10212A;
+    box-shadow: inset 0 -0.5rem 0 #10212A;
+
+    padding-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    width: 8.75rem;
+    height: 8.75rem;
+}
+
+.board-block-selected {
+    background: var(--background-content);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.9375rem;
+
+    -webkit-box-shadow: inset 0 -0.25rem 0 #10212A;
+    box-shadow: inset 0 -0.25rem 0 #10212A;
+
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    cursor: pointer;
+
+    width: 8.75rem;
+    height: 8.5rem;
+}
+
+.board-block-image-solid {
+    position: absolute;
+
+    width: 4.375rem;
+    height: 4.375rem;
+}
+
+.board-block-image-outline {
+    opacity: 0;
+
+    -webkit-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    transform: scale(0.5);
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+
+    width: 4.375rem;
+    height: 4.375rem;
+}
+
+.board-block:hover .board-block-image-outline {
+    opacity: 1;
+
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+
+#main-footer {
+    display: -ms-grid;
+    display: grid;
+
+    grid-gap: 1.25rem;
+    -ms-grid-columns: 8.75rem 1.25rem 8.75rem 1.25rem 8.75rem;
+    grid-template-columns: repeat(3, 8.75rem);
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 28.75rem;
+}
+
+#player-one-wins {
+    background: var(--blue);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.9375rem;
+
+    width: 100%;
+    height: 4.5rem;
+}
+
+#ties {
+    background: var(--text);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.9375rem;
+
+    width: 100%;
+    height: 4.5rem;
+}
+
+#player-two-wins {
+    background: var(--yellow);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    border-radius: 0.9375rem;
+
+    width: 100%;
+    height: 4.5rem;
+}
+
+.values-title {
+    color: var(--background-content);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+
+    letter-spacing: 0.055rem;
+    line-height: 1.1025rem;
+}
+
+.values-number {
+    color: var(--background-content);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+
+    letter-spacing: 0.09375rem;
+    line-height: 1.89rem;
+}
+
+#end-game-modal-container {
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 45rem;
+}
+
+#end-game-modal {
+    background: var(--background-content);
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 16.625rem;
+}
+
+#end-game-modal-title {
+    color: var(--text);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 1.26rem;
+
+    margin-bottom: 1rem;
+}
+
+#end-game-modal-text-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    margin-bottom: 1.5rem;
+}
+
+#end-game-modal-text-img {
+    margin-right: 1.5rem;
+
+    width: 4rem;
+    height: 4rem;
+}
+
+#end-game-modal-text {
+    color: var(--blue);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15625rem;
+    line-height: 3.15rem;
+}
+
+#end-game-modal-button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#end-game-modal-button-quit {
+    background: var(--text);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    color: var(--background);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 1.26rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.5rem 0 #6B8997;
+    box-shadow: inset 0 -0.5rem 0 #6B8997;
+
+    margin-right: 1rem;
+    padding: 0 1rem 0 1rem;
+    padding-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    
+    height: 3.25rem;
+}
+
+#end-game-modal-button-quit:hover {
+    -webkit-box-shadow: inset 0 -0.25rem 0 #6B8997;
+    box-shadow: inset 0 -0.25rem 0 #6B8997;
+
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    height: 3rem;
+}
+
+#end-game-modal-button-next-round {
+    background: var(--yellow);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    color: var(--background);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 1.26rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.5rem 0 #CC8B13;
+    box-shadow: inset 0 -0.5rem 0 #CC8B13;
+
+    margin-right: 1rem;
+    padding: 0 1rem 0 1rem;
+    padding-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    
+    height: 3.25rem;
+}
+
+#end-game-modal-button-next-round:hover {
+    -webkit-box-shadow: inset 0 -0.25rem 0 #CC8B13;
+    box-shadow: inset 0 -0.25rem 0 #CC8B13;
+
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    
+    height: 3rem;
+}
+
+#restart-game-modal-container {
+    background: rgba(0, 0, 0, 0.5);
+
+    display: none;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100vw;
+    height: 100vh;
+    min-height: 45rem;
+}
+
+#restart-game-modal {
+    background: var(--background-content);
+    
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 16.625rem;
+}
+
+#restart-game-modal-title {
+    color: var(--text);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+
+    letter-spacing: 0.15625rem;
+    line-height: 3.15rem;
+
+    margin-bottom: 1.5rem;
+}
+
+#restart-game-modal-button-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#restart-game-modal-button-cancel {
+    background: var(--text);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    color: var(--background);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 1.26rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.5rem 0 #6B8997;
+    box-shadow: inset 0 -0.5rem 0 #6B8997;
+
+    margin-right: 1rem;
+    padding: 0 1rem 0 1rem;
+    padding-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    
+    height: 3.25rem;
+}
+
+#restart-game-modal-button-cancel:hover {
+    -webkit-box-shadow: inset 0 -0.25rem 0 #6B8997;
+    box-shadow: inset 0 -0.25rem 0 #6B8997;
+
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+
+    height: 3rem;
+}
+
+#restart-game-modal-button-restart {
+    background: var(--yellow);
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    color: var(--background);
+
+    font-family: "Outfit", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+
+    letter-spacing: 0.0625rem;
+    line-height: 1.26rem;
+
+    border: none;
+    border-radius: 0.625rem;
+
+    -webkit-box-shadow: inset 0 -0.5rem 0 #CC8B13;
+    box-shadow: inset 0 -0.5rem 0 #CC8B13;
+
+    margin-right: 1rem;
+    padding: 0 1rem 0 1rem;
+    padding-bottom: 0.5rem;
+
+    cursor: pointer;
+
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+    
+    height: 3.25rem;
+}
+
+#restart-game-modal-button-restart:hover {
+    -webkit-box-shadow: inset 0 -0.25rem 0 #CC8B13;
+    box-shadow: inset 0 -0.25rem 0 #CC8B13;
+
+    margin-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    
+    height: 3rem;
+}
+
+@media only screen and (max-width: 524px) {
+    html {
+        font-size: 3.05vw;
+    }
+}

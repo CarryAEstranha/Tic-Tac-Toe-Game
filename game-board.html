@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Tic Tac Toe | Board</title>
+
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/styles/game-board/styles.css">
+
+    <script src="./assets/scripts/game-board/engine.js" type="module"></script>
+    <script src="./assets/scripts/game-board/minimax.js" type="module"></script>
+</head>
+
+<body>
+    <main id="page-content">
+        <header id="main-header">
+            <div id="icons-container">
+                <img alt="Cross" src="./assets/images/icons/icon-x.svg">
+                <img alt="Circle" src="./assets/images/icons/icon-o.svg">
+            </div>
+
+            <div id="turn-container">
+                <img 
+                    alt="Cross" 
+                    id="turn-image" 
+                    src="./assets/images/icons/icon-x-grey.svg"
+                >
+
+                <p>TURN</p>
+            </div>
+
+            <button id="restart-button">
+                <img alt="Restart game" src="./assets/images/icons/icon-restart.svg">
+            </button>
+        </header>
+
+        <div id="board"></div>
+
+        <footer id="main-footer">
+            <div id = "player-one-wins">
+                <p class="values-title" id="player-one-wins-title"></p>
+                <p class="values-number" id="player-one-wins-value">0</p>
+            </div>
+
+            <div id="ties">
+                <p class="values-title" id="ties-title">TIES</p>
+                <p class="values-number" id="ties-value">0</p>
+            </div>
+
+            <div id="player-two-wins">
+                <p class="values-title" id="player-two-wins-title"></p>
+                <p class="values-number" id="player-two-wins-value">0</p>
+            </div>
+        </footer>
+
+        <div id="end-game-modal-container">
+            <div id="end-game-modal">
+                <p id="end-game-modal-title">YOU WON! OH NO, YOU LOST... ROUND TIED</p>
+
+                <div id="end-game-modal-text-container">
+                    <img 
+                        alt="Cross" 
+                        id="end-game-modal-text-img"
+                    >
+
+                    <p id="end-game-modal-text">TAKES THE ROUND</p>
+                </div>
+
+                <div id="end-game-modal-button-container">
+                    <button id="end-game-modal-button-quit">
+                        <p>QUIT</p>
+                    </button>
+                    <button id="end-game-modal-button-next-round">
+                        <p>NEXT ROUND</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="restart-game-modal-container">
+            <div id="restart-game-modal">
+                <p id="restart-game-modal-title">RESTART GAME</p>
+
+                <div id="restart-game-modal-button-container">
+                    <button id="restart-game-modal-button-cancel">
+                        <p>NO, CANCEL</p>
+                    </button>
+                    <button id="restart-game-modal-button-restart">
+                        <p>YES, RESTART</p>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

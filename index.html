@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tic Tac Toe | Home</title>
+
+    <link rel="shortcut icon" href="./assets/images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="./assets/styles/home/styles.css">
+
+    <script src="./assets/scripts/home/script.js"></script>
+</head>
+
+<body>
+    <main id="page-content">
+        <header id="main-header">
+            <img alt="Cross" src="./assets/images/icons/icon-x.svg">
+            <img alt="Circle" src="./assets/images/icons/icon-o.svg">
+        </header>
+
+        <form action="game-board.html" autocomplete="off" id="main-form" method="get">
+            <div id="input-container">
+                <h1>PICK PLAYER 1'S MARK</h1>
+
+                <input name="checkpoint" style="display: none;" type="text" value="false">
+
+                <div id="radio-container">
+                    <div id="decoration">
+                        <div></div>
+                    </div>
+
+                    <label for="player-x">
+                        <img 
+                            alt="Cross" 
+                            class="label-show" 
+                            id="label-cross" 
+                            src="./assets/images/icons/icon-x-black.svg"
+                        >
+
+                        <img 
+                            alt="Cross" 
+                            class="label-hidden" 
+                            id="label-cross-fade" 
+                            src="./assets/images/icons/icon-x-grey.svg"
+                        >
+                    </label>
+                    <input 
+                        id="player-x" 
+                        checked
+                        name="player" 
+                        onclick="selectMark('x')" 
+                        type="radio" 
+                        value="0"
+                    >
+
+                    <label for="player-o">
+                        <img 
+                            alt="Circle" 
+                            class="label-show" 
+                            id="label-circle" 
+                            src="./assets/images/icons/icon-o-grey.svg"
+                        >
+
+                        <img 
+                            alt="Circle" 
+                            class="label-hidden" 
+                            id="label-circle-fade" 
+                            src="./assets/images/icons/icon-o-black.svg"
+                        >
+                    </label>
+                    <input 
+                        id="player-o" 
+                        name="player" 
+                        onclick="selectMark('o')" 
+                        type="radio" 
+                        value="1"
+                    >
+                </div>
+
+                <p>REMEMBER : X GOES FIRST</p>
+            </div>
+
+            <div id="submit-container">
+                <label id="submit-CPU" for="mode-CPU">NEW GAME (VS CPU)</label>
+                <input 
+                    id="mode-CPU" 
+                    name="mode" 
+                    type="submit" 
+                    value="CPU"
+                >
+
+                <label id="submit-PVP" for="mode-PVP">NEW GAME (VS PLAYER)</label>
+                <input 
+                    id="mode-PVP" 
+                    name="mode" 
+                    type="submit" 
+                    value="PVP"
+                >
+            </div>
+        </form>
+    </main>
+</body>
+
+</html>
