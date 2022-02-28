@@ -81,7 +81,7 @@ const createBoard = (boardMatrix) => {
                 div.style.pointerEvents = "none";
 
                 img.className = "board-block-image-solid";
-                img.src = "../../assets/images/icons/icon-x.svg";
+                img.src = "./assets/images/icons/icon-x.svg";
 
                 div.appendChild(img);
                 board.appendChild(div);
@@ -90,7 +90,7 @@ const createBoard = (boardMatrix) => {
                 div.style.pointerEvents = "none";
 
                 img.className = "board-block-image-solid";
-                img.src = "../../assets/images/icons/icon-o.svg";
+                img.src = "./assets/images/icons/icon-o.svg";
 
                 div.appendChild(img);
                 board.appendChild(div);
@@ -100,9 +100,9 @@ const createBoard = (boardMatrix) => {
                 img.className = "board-block-image-outline"
 
                 if (gameStatus.playingNow === 0) {
-                    img.src = "../../assets/images/icons/icon-x-outline.svg";
+                    img.src = "./assets/images/icons/icon-x-outline.svg";
                 } else {
-                    img.src = "../../assets/images/icons/icon-o-outline.svg";
+                    img.src = "./assets/images/icons/icon-o-outline.svg";
                 }
 
                 div.appendChild(img);
