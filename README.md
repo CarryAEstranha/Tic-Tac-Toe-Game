@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Front](https://user-images.githubusercontent.com/53675070/146688548-3b927641-fc4a-42f9-9072-06b38b8c5ffd.png)
+![front](https://user-images.githubusercontent.com/53675070/155910746-099b4d90-586a-4b78-8e9b-15fc694b1b73.png)
 
 ### Links
 
