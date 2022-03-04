@@ -132,7 +132,7 @@ const modalButtons = () => {
     });
 
     endGameModalButtonQuit.addEventListener("click", () => {
-        window.location.href = "/";
+        window.location.href = "/index.html";
     });
 
     endGameModalButtonNextRound.addEventListener("click", () => {
