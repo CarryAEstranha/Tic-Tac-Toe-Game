@@ -132,7 +132,7 @@ const modalButtons = () => {
     });
 
     endGameModalButtonQuit.addEventListener("click", () => {
-        window.location.href = "/index.html";
+        window.location.href = "/Tic-Tac-Toe-Game/";
     });
 
     endGameModalButtonNextRound.addEventListener("click", () => {
